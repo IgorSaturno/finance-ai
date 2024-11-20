@@ -7,31 +7,13 @@ import { TransactionTypeBadge } from "../_components/type-badge";
 import { Button } from "@/app/_components/ui/button";
 import { TrashIcon } from "lucide-react";
 import { EditTransactionButton } from "../_components/edit-transaction-button";
+import {
+  TRANSACTION_CATEGORY_LABELS,
+  TRANSACTION_PAYMENT_METHOD_LABELS,
+} from "@/app/constants/_transactions";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-
-export const TRANSACTION_CATEGORY_LABELS = {
-  EDUCATION: "Educação",
-  ENTERTAIMENT: "Entretenimento",
-  FOOD: "Alimentação",
-  HEALTH: "Saúde",
-  HOUSING: "Moradia",
-  OTHER: "Outros",
-  SALARY: "Salario",
-  TRANSPORTATION: "Transporte",
-  UTILITY: "Utilidades",
-};
-
-export const TRANSACTION_PAYMENT_METHOD_LABELS = {
-  BANK_TRANSFER: "Transferencia Bancária",
-  BANK_SLIP: "Boleto Bancário",
-  CASH: "Dinheiro",
-  CREDIT_CARD: "Cartão de Crédito",
-  DEBIT_CARD: "Cartão de Débito",
-  OTHER: "Outros",
-  PIX: "Pix",
-};
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
