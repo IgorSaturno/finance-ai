@@ -31,7 +31,7 @@ export function LastTransactions({ lastTransactions }: LastTransactionsProps) {
   return (
     <ScrollArea className="rounded-md border">
       <CardHeader className="flex-row items-center justify-between">
-        <CardTitle className="font-bold">últimas transações</CardTitle>
+        <CardTitle className="font-bold">Últimas Transações</CardTitle>
         <Button variant="outline" className="rounded-full font-bold" asChild>
           <Link href="/transactions">Ver mais</Link>
         </Button>
@@ -45,9 +45,7 @@ export function LastTransactions({ lastTransactions }: LastTransactionsProps) {
             <div className="flex items-center gap-3">
               <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-white">
                 <Image
-                  src={
-                    TRANSACTION_PAYMENT_METHOD_ICONS[transaction.paymentMethod]
-                  }
+                  src={`/${TRANSACTION_PAYMENT_METHOD_ICONS[transaction.paymentMethod]}`}
                   height={20}
                   width={20}
                   alt="PIX"
