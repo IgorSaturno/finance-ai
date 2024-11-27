@@ -7,12 +7,14 @@ interface SummaryCardProps {
   title: string;
   amount: number;
   size?: "small" | "large";
+  userCanAddTransaction?: boolean;
 }
 export function SummaryCard({
   icon,
   title,
   amount,
   size = "small",
+  userCanAddTransaction,
 }: SummaryCardProps) {
   return (
     <Card className={`${size === "large" ? "bg-white bg-opacity-5" : ""}`}>
@@ -32,7 +34,9 @@ export function SummaryCard({
           }).format(amount)}
         </p>
 
-        {size === "large" && <AddTransactionButton />}
+        {size === "large" && (
+          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
+        )}
       </CardContent>
     </Card>
   );
