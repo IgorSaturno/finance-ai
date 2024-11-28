@@ -13,7 +13,7 @@ export default async function TransactionsPage() {
   if (!userId) {
     redirect("/login");
   }
-  // acessar as transaçoes do meu banco de dados.
+  // acessar as transaçoes do meu banco de dados
   const transactions = await db.transaction.findMany({
     where: {
       userId,
