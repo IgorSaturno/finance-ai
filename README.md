@@ -1,8 +1,6 @@
-<img src="https://i.ibb.co/KqsfS9S/financeai-logo.png" alt="financeai-logo" border="0">
+<img src="./public/Capa.png" alt="Finance-Ai Dashboard" border="0" />
 
 Aplicação web de gestão financeira com integração ChatGPT(OpenAI)
-
-<img src="./public/Capa.png" alt="Finance-Ai Dashboard" border="0" />
 
 ### Features
 
