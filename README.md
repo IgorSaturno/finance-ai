@@ -79,3 +79,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - Plataforma Recomendada: [Vercel](https://vercel.com/)
 - Configure as variáveis de ambiente no painel da Vercel.
+- Link da aplicação: [Finance-AI](https://finance-ai-two-dun.vercel.app/login)
