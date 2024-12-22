@@ -11,6 +11,7 @@ import { ExpensesPerCategory } from "./_components/expenses-per-category";
 import { LastTransactions } from "./_components/last-transactions";
 import { canUserAddTransaction } from "../data/can-user-add-transaction";
 import AiReportButton from "./_components/ai-report-button";
+import { ScrollArea } from "../_components/ui/scroll-area";
 
 interface HomeProps {
   searchParams: {
@@ -33,9 +34,11 @@ export default async function Home({ searchParams: { month } }: HomeProps) {
   return (
     <>
       <Navbar />
-      <div className="flex h-full flex-col space-y-6 overflow-hidden p-6">
-        <div className="flex justify-between">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+      <div className="flex flex-col space-y-6 overflow-hidden p-10 lg:overflow-hidden">
+        {/* <div className="flex items-center justify-center"> */}
+        {/* </div> */}
+        <div className="flex flex-col items-center lg:flex-row lg:justify-between">
+          <h1 className="pb-2 text-2xl font-bold lg:pb-0">Dashboard</h1>
           <div className="flex items-center gap-3">
             <AiReportButton
               month={month}
@@ -44,21 +47,24 @@ export default async function Home({ searchParams: { month } }: HomeProps) {
             <TimeSelect />
           </div>
         </div>
-        <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">
-          <div className="flex flex-col gap-6 overflow-hidden">
+        <div className="flex flex-col gap-4 lg:grid-cols-[2fr,1fr] lg:overflow-hidden">
+          <div className="flex flex-col gap-4 lg:overflow-hidden">
             <SummaryCards
               month={month}
               {...dashboard}
               userCanAddTransaction={userCanAddTransaction}
             />
-            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
+
+            <div className="grid w-full items-center gap-6 lg:grid-cols-3">
               <TransactionsPieChart {...dashboard} />
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpensePerCategory}
               />
             </div>
           </div>
-          <LastTransactions lastTransactions={dashboard.lastTransactions} />
+          <ScrollArea className="mt-4 h-[500px]">
+            <LastTransactions lastTransactions={dashboard.lastTransactions} />
+          </ScrollArea>
         </div>
       </div>
     </>

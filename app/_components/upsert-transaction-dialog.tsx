@@ -117,7 +117,7 @@ export function UpsertTransactionDialog({
       }}
     >
       <DialogTrigger asChild></DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-h-[80vh] w-[350px] overflow-y-auto lg:w-[500px] [&::-webkit-scrollbar]:hidden">
         <DialogHeader>
           <DialogTitle>
             {isUpdate ? "Atualizar" : "Criar"} Transação
@@ -257,7 +257,11 @@ export function UpsertTransactionDialog({
             />
             <DialogFooter>
               <DialogClose asChild>
-                <Button type="button" variant="outline">
+                <Button
+                  className="mt-4 lg:mt-0"
+                  type="button"
+                  variant="outline"
+                >
                   Cancelar
                 </Button>
               </DialogClose>
